@@ -11,64 +11,108 @@ tags:
 ---
 
 
-<h3>1. 创建工作空间</h3>
-<div></div>
-<pre class="brush: java; gutter: true">mkdir catkin_workspace
+# Cv_bridge in Python3
+
+2020/11/19 By Alanby
+
+zhihaibi90@gmail.com
+
+
+
+### 1.  创建工作空间
+
+```
+mkdir catkin_workspace
 cd catkin_workspace
-mkdir src 
-</pre>
+mkdir src  
+```
 
-<h3>2. 在空的工作空间中初始化环境</h3>
-<p>适用于 **Python 3 users in ROS Melodic and earlier**，再新一点的版本不敢保证.</p>
-<div></div>
-<pre class="brush: java; gutter: true">catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
-</pre>
 
-<p>仅需要第一次加后缀，会将该工作空间下的编译环境自动设置为python3, **之后再编译的话直接catkin_make就可以**</p>
-<p>创建完工作空间后，就直接打开bashrc，把启动环境写上，养成好习惯</p>
-<div></div>
-<pre class="brush: java; gutter: true">gedit ~/.bashrc
+
+### 2. 在空的工作空间中初始化环境
+
+适用于 **Python 3 users in ROS Melodic and earlier**，再新一点的版本不敢保证.
+
+```
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+```
+
+仅需要第一次加后缀，会将该工作空间下的编译环境自动设置为python3, **之后再编译的话直接catkin_make就可以**
+
+创建完工作空间后，就直接打开bashrc，把启动环境写上，养成好习惯
+
+```
+gedit ~/.bashrc
 #打开文件后在后面添加
 source ~/catkin_workspace/devel/setup.bash
-</pre>
+```
 
-<h3>3. Clone the original code of Cv_bridge and make</h3>
-<pre class="brush: java; gutter: true">git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
+
+
+
+
+### 3. Clone the original code of Cv_bridge and make
+
+```
+git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
 cd ~/catkin_workspace/
 catkin_make
-</pre>
-<p>这时候如果发现以下报错：</p>
-<p>.......boost _python37 ... </p>
+```
 
-<p>是因为cmake尝试去找libboost_python3.so的库，但是ubuntu下这个名字一般叫`libboost_python-py35.so`(`/usr/lib/x86_64-linux-gnu/libboost_python-py35.so`)，所以可以去`src/vision_opencv/cv_bridge/CMakeLists.txt` 下将</p>
+这时候如果发现以下报错：
 
-<div></div>
-<pre class="brush: java; gutter: true">find_package(Boost REQUIRED python37)
+![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err01.png)
+
+是因为cmake尝试去找libboost_python3.so的库，但是ubuntu下这个名字一般叫`libboost_python-py35.so`(`/usr/lib/x86_64-linux-gnu/libboost_python-py35.so`)，所以可以去`src/vision_opencv/cv_bridge/CMakeLists.txt` 下将
+
+```
+find_package(Boost REQUIRED python37)
 #修改为
 find_package(Boost REQUIRED python-py35)
-</pre>
+```
 
-<p>重新编译后可能会有以下错误：</p>
-<p>nullptr was not declared</p>
 
-<p>这是因为源代码最近被作者改成了c++11标准，nullptr是c++11的新特性，而本身电脑的gcc没跟上，不想升级gcc的话，可以直接到相应提示的文件把nullptr改成NULL.
 
-修改后再重新编译，即可成功.</p>
+重新编译后可能会有以下错误：
 
-<h3>4. 验证</h3>
-<p>打开新终端，启动python3,输入</p>
-<div></div>
-<pre class="brush: java; gutter: true">from cv_bridge.boost.cv_bridge_boost import getCvType
-</pre>
-<p>无报错，则成功，接下来试试在python3下使用cv_bridge.注意我们现在用的是python3下的cv_bridge，代码开头如果没有将ros中python2的系统变量移除的话，即使用了python3  ###.py 的命令，系统也会优先去调用ros中的cv_bridge.可能会出现以下错误：</p>
+![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err02.png)
 
-<p>libgcc_s.so.1 must be installed for pthread_cancel to work </p>
-<p>找不到链接库，我们只需要在import前移除掉ros里的python2环境就好</p>
+这是因为源代码最近被作者改成了c++11标准，nullptr是c++11的新特性，而本身电脑的gcc没跟上，不想升级gcc的话，可以直接到相应提示的文件把nullptr改成NULL.
 
-<div></div>
-<pre class="brush: java; gutter: true">import sys
+修改后再重新编译，即可成功.
+
+![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err03.png)
+
+
+
+### 4. 验证
+
+打开新终端，启动python3,输入
+
+```
+from cv_bridge.boost.cv_bridge_boost import getCvType
+```
+
+![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err04.png)
+
+没有报错，说明环境配置成功，接下来试试在python3下使用cv_bridge.
+
+注意我们现在用的是python3下的cv_bridge，代码开头如果没有将ros中python2的系统变量移除的话，即使用了python3  ###.py 的命令，系统也会优先去调用ros中的cv_bridge.可能会出现以下错误：
+
+![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err05.png)
+
+找不到链接库，我们只需要在import前移除掉ros里的python2环境就好
+
+```
+import sys
 sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
 from cv_bridge import CvBridge
-</pre>
+```
 
-<p>尝试订阅/kinect2/qhd/image_color节点，大功告成。(还没加图，别骂了，马上补)</p>
+
+
+尝试订阅/kinect2/qhd/image_color节点，大功告成：
+![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge.png)
+
+
+
