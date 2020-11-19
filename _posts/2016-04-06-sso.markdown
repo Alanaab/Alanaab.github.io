@@ -10,6 +10,16 @@ tags:
     - sso
 ---
 
+### 1.  创建工作空间
+适用于 **Python 3 users in ROS Melodic and earlier**，再新一点的版本不敢保证.
+
+```
+mkdir catkin_workspace
+cd catkin_workspace
+mkdir src  
+```
+
+
 <h2>一、单系统登录机制</h2>
 <h3>1、http无状态协议</h3>
 <p>web应用采用browser/server架构，http作为通信协议。http是无状态协议，浏览器的每一次请求，服务器会独立处理，不与之前或之后的请求产生关联，这个过程用下图说明，三次请求/响应对之间没有任何联系</p>
