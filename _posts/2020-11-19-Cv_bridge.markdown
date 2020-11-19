@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      "生活的智慧"
+title:      "CV_bridge in Python3"
 date:       2017-7-11 00:00:00
-author:     "wblearn"
+author:     "Alanby"
 header-img: "img/post-bg-alitrip.jpg"
 tags:
-    - 程序员
-    - 闲谈
+    - Ros
+    - image
     - 
 ---
 
