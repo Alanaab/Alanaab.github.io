@@ -13,9 +13,6 @@ tags:
 
 # Cv_bridge in Python3
 
-2020/11/19 By Alanby
-
-zhihaibi90@gmail.com
 
 
 
