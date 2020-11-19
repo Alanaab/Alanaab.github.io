@@ -19,6 +19,8 @@ cd catkin_workspace
 mkdir src  
 ```
 
+![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/avatar-wb1.jpg)
+
 
 <h2>一、单系统登录机制</h2>
 <h3>1、http无状态协议</h3>
