@@ -17,7 +17,10 @@ tags:
 
 ## dadaddad
 ![](https://latex.codecogs.com/gif.latex?\dpi{400}a_1=0)
- 
+ ## dadaddad
+ $
+ a_1 = 0
+ $
 
 
 <h3>1.  创建工作空间</h3>
