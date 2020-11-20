@@ -11,6 +11,8 @@ tags:
 ---
 
 
+看不见公式的朋友可以下载插件:
+https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima/related
 ## dadad
 
 ![](http://latex.codecogs.com/gif.latex?\\sigma=\sqrt{\frac{1}{n}{\sum_{k=1}^n(x_i-\bar{x})^2}})
