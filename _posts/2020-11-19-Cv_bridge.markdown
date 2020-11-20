@@ -58,7 +58,7 @@ catkin_make
 
 这时候如果发现以下报错：
 
-![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err01.png)
+![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_bridge_err01.png)
 
 是因为cmake尝试去找libboost_python3.so的库，但是ubuntu下这个名字一般叫`libboost_python-py35.so`(`/usr/lib/x86_64-linux-gnu/libboost_python-py35.so`)，所以可以去`src/vision_opencv/cv_bridge/CMakeLists.txt` 下将
 
@@ -72,13 +72,13 @@ find_package(Boost REQUIRED python-py35)
 
 重新编译后可能会有以下错误：
 
-![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_beidge_err02.png)
+![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_beidge_err02.png)
 
 这是因为源代码最近被作者改成了c++11标准，nullptr是c++11的新特性，而本身电脑的gcc没跟上，不想升级gcc的话，可以直接到相应提示的文件把nullptr改成NULL.
 
 修改后再重新编译，即可成功.
 
-![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err03.png)
+![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_bridge_err03.png)
 
 
 
@@ -90,13 +90,13 @@ find_package(Boost REQUIRED python-py35)
 from cv_bridge.boost.cv_bridge_boost import getCvType
 ```
 
-![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err04.png)
+![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_bridge_err04.png)
 
 没有报错，说明环境配置成功，接下来试试在python3下使用cv_bridge.
 
 注意我们现在用的是python3下的cv_bridge，代码开头如果没有将ros中python2的系统变量移除的话，即使用了python3  ###.py 的命令，系统也会优先去调用ros中的cv_bridge.可能会出现以下错误：
 
-![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge_err05.png)
+![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_bridge_err05.png)
 
 找不到链接库，我们只需要在import前移除掉ros里的python2环境就好
 
@@ -109,7 +109,7 @@ from cv_bridge import CvBridge
 
 
 尝试订阅/kinect2/qhd/image_color节点，大功告成：
-![image](https://github.com/Alanaab/Alanaab.github.io/blob/master/img/cv_bridge.png)
+![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_bridge.png)
 
 
 
