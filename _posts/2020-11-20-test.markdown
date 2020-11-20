@@ -10,6 +10,16 @@ tags:
     - 
 ---
 
+
+## dadad
+
+  $$
+  T = u(N/n_R) \Delta t
+  $$
+  
+ ## dadad
+ $d_1$
+
 <h3>1.  创建工作空间</h3>
 <div></div>
 <pre class="brush: java; gutter: true">mkdir catkin_workspace
