@@ -28,7 +28,7 @@ mkdir src
 
 ### 2. 在空的工作空间中初始化环境
 
-适用于 **Python 3 users in ROS Melodic and earlier**，再新一点的版本不敢保证.
+适用于 **Python 3 users in ROS Melodic and earlier**，再新一点的版本不敢保证了.
 
 ```
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
