@@ -66,7 +66,7 @@ livere_uid: MTAyMC8yODkzOC81NTA3
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: wblearn.github.io
+ga_domain: Alanaab.github.io
 
 
 
@@ -111,10 +111,7 @@ defaults:
 # Friends
 friends: [
     {
-        title: "wblearn的微博",
-        href: "http://weibo.com/wudalanggd"
-    },{
-        title: "study video",
-        href: "https://wblearn.github.io/study-video"
+        title: "Henry",
+        href: "https://sszxc.github.io/"
     }
 ]
