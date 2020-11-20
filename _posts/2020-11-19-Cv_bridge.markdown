@@ -16,7 +16,7 @@ tags:
 
 
 
-### 1.  创建工作空间
+ ### 1.  创建工作空间
 
 ```
 mkdir catkin_workspace
@@ -26,7 +26,7 @@ mkdir src
 
 
 
-### 2. 在空的工作空间中初始化环境
+ ### 2. 在空的工作空间中初始化环境
 
 适用于 **Python 3 users in ROS Melodic and earlier**，再新一点的版本不敢保证了.
 
@@ -48,7 +48,7 @@ source ~/catkin_workspace/devel/setup.bash
 
 
 
-### 3. Clone the original code of Cv_bridge and make
+ ###  3. Clone the original code of Cv_bridge and make
 
 ```
 git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
@@ -82,7 +82,7 @@ find_package(Boost REQUIRED python-py35)
 
 
 
-### 4. 验证
+  ###  4. 验证
 
 打开新终端，启动python3,输入
 
