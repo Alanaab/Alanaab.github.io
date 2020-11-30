@@ -13,7 +13,7 @@ tags:
 
 # Cv_bridge in Python3
 
-
+*平台：ubuntu16.04*
 
 
 ### 1.  创建工作空间
