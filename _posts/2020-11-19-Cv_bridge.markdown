@@ -105,7 +105,7 @@ from cv_bridge import CvBridge
 
 
 
-尝试订阅/kinect2/qhd/image_color节点，大功告成：
+尝试订阅/kinect2/qhd/image_color节点，大功告成
 ![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_bridge.png)
 
 
