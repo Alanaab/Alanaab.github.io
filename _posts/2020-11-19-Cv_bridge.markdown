@@ -95,7 +95,7 @@ from cv_bridge.boost.cv_bridge_boost import getCvType
 
 ![image](https://github.com/Alanaab/Alanaab.github.io/raw/master/img/cv_bridge_err05.png)
 
-找不到链接库，我们只需要在import前移除掉ros里的python2环境就好
+找不到链接库，我们只需要在import前移除掉ros里的python2环境就好.
 
 ```
 import sys
