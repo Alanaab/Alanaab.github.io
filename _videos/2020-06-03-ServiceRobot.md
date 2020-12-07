@@ -2,7 +2,7 @@
 title: 服务机器人仿真
 youtube_id: 373018432
 cover_id: img/videos_cover/service_robot.png
-date: 2020-12-07
+date: 2020-06-03
 tags: [Alan, Slam, 目标检测]
 ---
 
