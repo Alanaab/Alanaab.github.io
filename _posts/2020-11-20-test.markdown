@@ -1,91 +1,48 @@
 ---
 layout:     post
-title:      "Test"
-date:       2020-11-20 8:18:00
+title:      "Statement"
+date:       2020-12-07 8:18:00
 author:     "Alanby"
 header-img: "img/post-bg-rwd.jpg"
 tags:
-    - Ros
-    - Image
+    - Statement
+    - Notice Board
     - 
 ---
 
+# 免责声明
 
-看不见公式的朋友可以下载插件:
+1、本博客提供的所有内容仅供学习、交流和分享用途，只供参考。
+
+
+2、关于本博客的所有留言评论与转载、引用文纯属文字原作者个人观点，与本博客观点及立场无关；浏览者在本博客发表信息时需要遵守中国现行相应法律，不得发布违法信息；
+
+
+3、本博客内容仅为个人言论，仅代表博主个人观点。由于观点的不断更新以及资源限制，我无法保证文章的信息具有100%准确性，完整性，时效性，实用性或有效性。因而我不对其中的任何错误，疏忽或者延迟更新承担责任，也无法对使用这些信息带来的任何损失、损害承担责任。 
+
+
+以上声明内容的最终解释权归博主Alanby所有。
+
+
+
+# 博客说明
+
+### 公式插件:
+本博客公式编辑使用了以下插件，如无下载插件，则无法查看公式
+
 https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima/related
-## dadad
 
+
+### 公式测试
 ![](http://latex.codecogs.com/gif.latex?\\sigma=\sqrt{\frac{1}{n}{\sum_{k=1}^n(x_i-\bar{x})^2}})
 
-## dadaddad
-![](https://latex.codecogs.com/gif.latex?\dpi{400}a_1=0)
- ## dadaddad
- $
- a_1 = 0
- $
+
+### 图片测试
 
 
-<h3>1.  创建工作空间</h3>
-<div></div>
-<pre class="brush: java; gutter: true">mkdir catkin_workspace
-cd catkin_workspace
-mkdir src 
-</pre>
+### 视频测试
 
-<h3>2. 在空的工作空间中初始化环境</h3>
-<p>适用于 **Python 3 users in ROS Melodic and earlier**，再新一点的版本不敢保证.</p>
-<div></div>
-<pre class="brush: java; gutter: true">catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
-</pre>
 
-<p>仅需要第一次加后缀，会将该工作空间下的编译环境自动设置为python3, **之后再编译的话直接catkin_make就可以**</p>
-<p>创建完工作空间后，就直接打开bashrc，把启动环境写上，养成好习惯</p>
-<div></div>
-<pre class="brush: java; gutter: true">gedit ~/.bashrc
-#打开文件后在后面添加
-source ~/catkin_workspace/devel/setup.bash
-</pre>
-
-<h3>3. Clone the original code of Cv_bridge and make</h3>
-<pre class="brush: java; gutter: true">git clone https://github.com/ros-perception/vision_opencv.git src/vision_opencv
-cd ~/catkin_workspace/
-catkin_make
-</pre>
-<p>这时候如果发现以下报错：</p>
-<p>.......boost _python37 ... </p>
-
-<p>是因为cmake尝试去找libboost_python3.so的库，但是ubuntu下这个名字一般叫`libboost_python-py35.so`(`/usr/lib/x86_64-linux-gnu/libboost_python-py35.so`)，所以可以去`src/vision_opencv/cv_bridge/CMakeLists.txt` 下将</p>
-
-<div></div>
-<pre class="brush: java; gutter: true">find_package(Boost REQUIRED python37)
-#修改为
-find_package(Boost REQUIRED python-py35)
-</pre>
-
-<p>重新编译后可能会有以下错误：</p>
-<p>nullptr was not declared</p>
-
-<p>这是因为源代码最近被作者改成了c++11标准，nullptr是c++11的新特性，而本身电脑的gcc没跟上，不想升级gcc的话，可以直接到相应提示的文件把nullptr改成NULL.
-
-修改后再重新编译，即可成功.</p>
-
-<h3>4. 验证</h3>
-<p>打开新终端，启动python3,输入</p>
-<div></div>
-<pre class="brush: java; gutter: true">from cv_bridge.boost.cv_bridge_boost import getCvType
-</pre>
-<p>无报错，则成功，接下来试试在python3下使用cv_bridge.注意我们现在用的是python3下的cv_bridge，代码开头如果没有将ros中python2的系统变量移除的话，即使用了python3  ###.py 的命令，系统也会优先去调用ros中的cv_bridge.可能会出现以下错误：</p>
-
-<p>libgcc_s.so.1 must be installed for pthread_cancel to work </p>
-<p>找不到链接库，我们只需要在import前移除掉ros里的python2环境就好</p>
-
-<div></div>
-<pre class="brush: java; gutter: true">import sys
-sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
-from cv_bridge import CvBridge
-</pre>
-
-<p>尝试订阅/kinect2/qhd/image_color节点，大功告成。(还没加图，别骂了，马上补)</p>
 
 
 
