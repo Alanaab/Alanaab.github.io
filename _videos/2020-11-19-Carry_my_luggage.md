@@ -2,7 +2,7 @@
 title: 行李搬运机器人
 youtube_id: 970564968
 cover_id: img/videos_cover/luggage.png
-date: 2018-10-10
+date: 2020-11-19
 tags: [Alan, tracking, 移动机器人]
 ---
 
