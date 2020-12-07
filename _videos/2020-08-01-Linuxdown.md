@@ -2,7 +2,7 @@
 title: 嵌入式linux下位机
 youtube_id: 755575434
 cover_id: img/videos_cover/linux_down.png
-date: 2018-10-10
+date: 2020-08-01
 tags: [Alan, linux, 嵌入式]
 ---
 
