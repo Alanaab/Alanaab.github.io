@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "CV_bridge in Python3"
+title:      "Cv Bridge in Python3"
 date:       2020-11-19 22:30:00
 author:     "Alanby"
 header-img: "img/post-bg-alitrip.jpg"
