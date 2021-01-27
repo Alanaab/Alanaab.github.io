@@ -10,6 +10,15 @@ tags:
     - nonlinear dynamical system
 ---
 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
 
 # 数据驱动论文复现--基于稀疏辨识构建 非线性动力系统的控制方程
